@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-scroll";
 
 const Project = (
   {
@@ -32,9 +33,9 @@ const Project = (
                 <div className="portfolio-info__description">
                     { description }
                 </div>
-                <a href={link} target="_blank" rel="noreferrer" className="portfolio-info__link">
+                <Link to="footer" href={link} target="_blank" rel="noreferrer" className="portfolio-info__link">
                     Посмотреть
-                </a>
+                </Link>
             </div>
         </div>
     </div>
