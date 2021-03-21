@@ -36,7 +36,7 @@ const FooterForm = () => {
             fetch("/", {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: values
+                body: JSON.stringify(values)
               })
                 .then(() => alert("Success!"))
                 .catch(error => console.log(error));

@@ -1,4 +1,5 @@
-import React from "react"
+import React from "react";
+import { Link } from "react-scroll";
 
 const Service = (
   {
@@ -48,9 +49,9 @@ const Service = (
                 <span className="services-item-price__days">дней</span>
             </div>
             <div className="services-item-btn btn-orange">
-                <div className="services-item-btn__title">
+                <Link to="footer" className="services-item-btn__title">
                     Оставить заявку
-                </div>
+                </Link>
                 <div className="services-item-btn__icon">
                 <svg width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M19 5H1M15 1L19 5L15 1ZM19 5L15 9L19 5Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
