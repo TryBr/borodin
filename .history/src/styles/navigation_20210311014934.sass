@@ -1,0 +1,29 @@
+.navigation
+    position: fixed
+    top: 300px
+    right: 30px
+    list-style: none
+    padding: 0px
+    margin: 0px
+    z-index: 20
+    .navigation__item
+        margin-bottom: 45px
+        text-align: right
+        .navigation__item-link
+            font-style: normal
+            font-weight: 500
+            font-size: 18px
+            letter-spacing: 0.02em
+            color: #FFFFFF
+            text-align: right
+            text-decoration: none
+
+        &.active
+            &::before
+                content: ''
+                display: block
+                width: 20px
+                height: 2px
+                background: linear-gradient(95.21deg, #F59C33 0%, #F56233 98.85%)
+                border-radius: 3px
+                margin-right: 15px

@@ -1,0 +1,23 @@
+.clients
+    .clients-slider-desktop
+        display: block
+    .clients-slider-mobile
+        display: none
+    .clients-item
+        // -webkit-filter: grayscale(100%)
+        // filter: grayscale(100%)
+        text-align: center
+
+@media (min-width: 768px) and (max-width: 1199px)
+    .clients
+        .clients-slider-desktop
+            display: none
+        .clients-slider-mobile
+            display: block
+
+@media (min-width: 320px) and (max-width: 767px)
+    .clients
+        .clients-slider-desktop
+            display: none
+        .clients-slider-mobile
+            display: block

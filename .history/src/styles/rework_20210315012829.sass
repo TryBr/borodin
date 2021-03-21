@@ -1,0 +1,184 @@
+.rework
+    position: relative
+    background: linear-gradient(106.84deg, #181816 1.01%, #1E2626 29.36%, #272740 73.19%, #3A2567 100%)
+    overflow: hidden
+    .rework-stars-mobile
+        display: none
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 35%
+        left: 0px
+        right: 0px
+        z-index: 0
+        max-width: 714px
+        text-align: center
+        margin: 0 auto
+        svg
+            width: 100%
+            height: 100%
+    .rework-stars
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 60px
+        left: 0px
+        right: 0px
+        z-index: 0
+        max-width: 1480px
+        text-align: center
+        margin: 0 auto
+        svg
+            width: 100%
+            height: 100%
+
+    .rework-planets-mobile
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 1%
+        left: 0px
+        right: 0px
+        z-index: 0
+        max-width: 716px
+        text-align: center
+        margin: 0 auto
+        svg
+            width: 100%
+            height: 100%
+    
+    .rework-planets
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 180px
+        left: 0px
+        right: 0px
+        z-index: 0
+        max-width: 1480px
+        text-align: center
+        margin: 0 auto
+        svg
+            width: 100%
+            height: 100%
+    .rework-content
+        width: 100%
+        position: relative
+        z-index: 5
+        .rework-title
+            display: flex
+            justify-content: center
+            align-items: center
+            flex-direction: column
+            position: relative
+            z-index: 2
+            .rework-title__title
+                background: #F56233
+                border-radius: 50px
+                padding: 20px 45px
+                margin: 0 auto
+                margin-bottom: 25px
+
+        .rework-info
+            margin-top: 80px
+            margin-bottom: 80px
+            .container
+                width: 500px
+            .rework-info-content
+                .rework-info-content__title
+                    margin-bottom: 25px
+                .rework-list
+                    list-style: none
+                    margin: 0px
+                    padding: 0px
+                    margin-left: 30px
+                    .rework-list__item
+                        font-style: normal
+                        font-weight: 400   
+                        font-size: 18px
+                        letter-spacing: 0.02em
+                        color: #FFFFFF
+                        margin-bottom: 15px
+                        position: relative
+                        &:last-child
+                            &::before
+                                display: none
+                        &::before
+                            content: ''
+                            background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 5.00244C0 4.45016 0.447715 4.00244 1 4.00244H9C9.55228 4.00244 10 4.45016 10 5.00244V5.00244C10 5.55473 9.55228 6.00244 9 6.00244H1C0.447716 6.00244 0 5.55473 0 5.00244V5.00244Z' fill='url(%23paint0_linear)'/%3E%3Crect x='4' y='10' width='10' height='2' rx='1' transform='rotate(-90 4 10)' fill='url(%23paint1_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='0' y1='4.00244' x2='8.93165' y2='8.07256' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FE9417'/%3E%3Cstop offset='1' stop-color='%23F56233'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear' x1='4' y1='10' x2='12.9317' y2='14.0701' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FE9417'/%3E%3Cstop offset='1' stop-color='%23F56233'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A")
+                            position: absolute
+                            top: 6px
+                            left: -30px
+                            display: block
+                            width: 10px
+                            height: 10px
+
+        .rework-request-btn
+            width: 280px
+            height: 70px
+            line-height: 70px
+            border-radius: 5px
+            cursor: pointer
+            margin: 0 auto
+            .rework-request-btn__title
+                font-style: normal
+                font-weight: 600
+                font-size: 16px
+                text-align: center
+                color: #FFFFFF
+        
+@media (min-width: 768px) and (max-width: 991px)
+    .rework
+        .rework-stars-mobile
+            display: block
+        .rework-stars
+            display: none
+        .rework-planets-mobile
+            display: block
+        .rework-planets
+            display: none
+        .rework-content
+            .rework-title
+                .rework-title__title
+                    margin-left: 10px
+                    margin-right: 10px
+                    border-radius: 5px
+            .rework-info
+                .container
+                    width: 100%
+                    max-width: 500px
+                .rework-info-content
+                    width: 160px
+                    margin: 0 auto
+                    text-align: left
+                    margin-bottom: 80px
+                .rework-info__rocket
+                    text-align: center
+
+@media (min-width: 320px) and (max-width: 767px)
+    .rework
+        .rework-stars-mobile
+            display: block
+        .rework-stars
+            display: none
+        .rework-planets-mobile
+            display: block
+        .rework-planets
+            display: none
+        .rework-content
+            .rework-title
+                .rework-title__title
+                    margin-left: 10px
+                    margin-right: 10px
+                    border-radius: 5px
+            .rework-info
+                .container
+                    width: 100%
+                    max-width: 500px
+                .rework-info-content
+                    width: 160px
+                    margin: 0 auto
+                    text-align: left
+                    margin-bottom: 80px
+                .rework-info__rocket
+                    text-align: center

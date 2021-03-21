@@ -1,0 +1,118 @@
+.reviews
+    position: relative
+    .reviews-item
+        background: #FFFFFF
+        border: 1px solid #EDEDED
+        box-sizing: border-box
+        box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.05)
+        border-radius: 5px
+        padding: 45px
+        .reviews-item-text
+            font-style: normal
+            font-weight: 300
+            font-size: 18px
+            line-height: 35px
+            color: #000000
+            max-height: 200px
+        .reviews-item-separator
+            width: 100px
+            height: 2px
+            background: #E9E9E9
+            border-radius: 3px
+            margin-bottom: 35px
+            margin-top: 35px
+
+        .author
+            display: flex
+            justify-content: start
+            align-items: center
+            .author-photo
+                border: 2px solid #FE9417
+                border-radius: 50%
+                width: 100px
+                height: 100px
+                text-align: center
+                position: relative
+                margin-right: 25px
+                .author-photo__img
+                    width: 85px
+                    height: 85px
+                    object-fit: cover
+                    position: absolute
+                    border-radius: 50%
+                    top: 0px
+                    left: 0px
+                    right: 0px
+                    margin: 0 auto
+                    top: 50%
+                    transform: translateY(-50%)
+            .author-info
+                .author-fio
+                    font-style: normal
+                    font-weight: 500
+                    font-size: 16px
+                    letter-spacing: 0.02em
+                    color: #000000
+                    margin-bottom: 5px
+                .author-post
+                    font-style: normal
+                    font-weight: 300
+                    font-size: 16px
+                    letter-spacing: 0.02em
+                    color: #000000
+
+    .swiper-container
+        padding-top: 106px
+        padding-bottom: 87px
+    .swiper-pagination
+        bottom: 0px !important
+        .swiper-pagination-bullet
+            width: 25px
+            height: 5px
+            background: #DBDBDB
+            box-shadow: 0px 0px 50px -10px rgba(254, 148, 23, 0.5)
+            border-radius: 3px
+            margin: 0 5px
+            opacity: 1
+        .swiper-pagination-bullet-active
+            width: 25px
+            height: 5px
+            background: linear-gradient(95.21deg, #FE9417 0%, #F56233 98.85%)
+            box-shadow: 0px 0px 50px -10px rgba(254, 148, 23, 0.5)
+            border-radius: 3px
+    
+    .swiper-button-next
+        background-image: url("data:image/svg+xml,%3Csvg width='56' height='26' viewBox='0 0 56 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M55 13H1M43 1L55 13L43 1ZM55 13L43 25L55 13Z' stroke='url(%23paint0_linear)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='1' y1='1' x2='56.896' y2='12.4622' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FE9417'/%3E%3Cstop offset='1' stop-color='%23F56233'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A")
+        height: 26px
+        width: 56px
+        top: 22px
+        right: 44.5%
+        transition: all 0.2s
+        outline: none
+        webkit-transform: translateX(0px)
+        -ms-transform: translateX(0px) 
+        transform: translateX(0px)
+        &::after
+            display: none
+        &:hover
+            -webkit-transform: translateX(5px)
+            -ms-transform: translateX(5px) 
+            transform: translateX(5px)
+
+    .swiper-button-prev
+        background-image: url("data:image/svg+xml,%3Csvg width='56' height='26' viewBox='0 0 56 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 13H55M13 1L1 13L13 1ZM1 13L13 25L1 13Z' stroke='url(%23paint0_linear)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='55' y1='1' x2='-0.896039' y2='12.4622' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FE9417'/%3E%3Cstop offset='1' stop-color='%23F56233'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A")
+        height: 26px
+        width: 56px
+        top: 22px
+        left: 44.5%
+        transition: all 0.2s
+        outline: none
+        -webkit-transform: translateX(0px)
+        -ms-transform: translateX(0px) 
+        transform: translateX(0px)
+        &::after
+            display: none
+        &:hover
+            -webkit-transform: translateX(-5px)
+            -ms-transform: translateX(-5px) 
+            transform: translateX(-5px)
