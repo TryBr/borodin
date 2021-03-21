@@ -36,11 +36,10 @@ const FooterForm = () => {
             fetch("/", {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: encode({ "form-name": "contact", ...values })
+                body: encode({ "form-name": "contact", values })
               })
                 .then(() => {
                     console.log("Success!");
-                    console.log(encode({ "form-name": "contact", ...values }));
                     formik.resetForm({
                         values: { phone: '', name: '', message: '' },
                     });
