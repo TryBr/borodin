@@ -19,6 +19,12 @@ const validate = values => {
 
 const FooterForm = () => {
 
+    function encode(data) {
+        return Object.keys(data)
+            .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+            .join("&")
+    }
+
     const formik = useFormik({
         initialValues: {
             phone: '',
@@ -30,11 +36,10 @@ const FooterForm = () => {
             fetch("/", {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: JSON.stringify(values)
+                body: encode({ "form-name": "contact", ...values })
               })
                 .then(() => {
                     console.log("Success!");
-                    console.log(JSON.stringify(values));
                 })
                 .catch(error => console.log(error));
         },
@@ -42,7 +47,7 @@ const FooterForm = () => {
 
     return (
         <>
-        <form className="footer-form order-lg-1 order-2" data-aos="fade-right" onSubmit={formik.handleSubmit} name="contact" method="POST" data-netlify="true">
+        <form className="footer-form order-lg-1 order-2" data-aos="fade-right" onSubmit={formik.handleSubmit} name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
             <div className="footer-form-field-wrapper">
                 <label htmlFor="phone" className="footer-form__label">Телефон</label>
                 <input
