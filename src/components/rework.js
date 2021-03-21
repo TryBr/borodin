@@ -58,16 +58,16 @@ const Rework = () => {
     return(
         <section className="rework section" id="rework">
             <div className="rework-stars-mobile">
-                <img width="100%" height="100%"  src={ starsMobile } alt=""/>
+                <img src={ starsMobile } alt=""/>
             </div>
             <div className="rework-stars">
-                <img width="100%" height="100%"  src={ stars } alt=""/>
+                <img src={ stars } alt=""/>
             </div>
             <div className="rework-planets">
-                <img width="100%" height="100%"  src={ planets } alt=""/>
+                <img src={ planets } alt=""/>
             </div>
             <div className="rework-planets-mobile">
-                <img width="100%" height="100%"  src={ planetsMobile } alt=""/>
+                <img src={ planetsMobile } alt=""/>
             </div>
             <div className="rework-content section-content">
                 <div className="rework-title">

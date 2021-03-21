@@ -29,11 +29,11 @@ const FooterContacts = () => {
   return (
     <>
     <div className="footer-contacts-item">
-        <div className="footer-contacts-item__title">Телефон:</div>
+        <div className="footer-contacts-item__title">Звоните:</div>
         <a href={`tel: ${phone}`} className="footer-contacts-item__value">{phone}</a>
     </div>
     <div className="footer-contacts-item">
-        <div className="footer-contacts-item__title">Почта:</div>
+        <div className="footer-contacts-item__title">Пишите:</div>
         <a href={`mailto: ${email}`} className="footer-contacts-item__value">{email}</a>
     </div>
     <div className="footer-contacts-item">

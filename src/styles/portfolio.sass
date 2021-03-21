@@ -7,11 +7,16 @@
         border-radius: 5px
         padding-bottom: 60px
         margin-bottom: 30px
-
+        overflow: hidden
         .portfolio-item-preview
             height: 400px
             background: #e1e1e1
             margin-bottom: 50px
+            overflow: hidden
+            .portfolio-item-preview__img
+                object-fit: cover
+                height: 400px
+                width: 634px
         .portfolio-info
             padding: 0 30px
             .portfolio-info__separator
@@ -29,6 +34,7 @@
                 letter-spacing: 0.02em
                 color: #000000
                 margin-bottom: 50px
+                min-height: 150px
             .portfolio-info__link
                 font-style: normal
                 font-weight: 600
@@ -94,3 +100,9 @@
                 -ms-transform: rotate(180deg)
                 transform: rotate(180deg)
     
+@media (min-width: 320px) and (max-width: 767px)
+    .portfolio
+        .portfolio-item
+            .portfolio-info
+                .portfolio-info__description
+                    min-height: auto

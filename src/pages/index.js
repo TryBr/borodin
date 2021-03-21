@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import Layout from "../components/layout";
 import Services from "../components/services";
 import Qualities from "../components/qualities";
-import Portfolio from "../components/portfolio";
+import Projects from "../components/projects";
 import About from "../components/about";
 import Rework from "../components/rework";
 import Reviews from "../components/reviews";
@@ -27,7 +27,7 @@ const IndexPage = () => {
       </Helmet>
       <Services />
       <Qualities />
-      <Portfolio />
+      <Projects />
       <About />
       <Rework />
       <Reviews />

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "gatsby";
-import { useFormik, Field, Form, Textarea } from 'formik';
+import { useFormik } from 'formik';
 
 
 const validate = values => {
@@ -27,15 +27,24 @@ const FooterForm = () => {
         },
         validate,
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 3));
+            // alert(JSON.stringify(values, null, 3));
+            fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: encode({ "form-name": "contact", values })
+              })
+                .then(() => alert("Success!"))
+                .catch(error => alert(error));
+        
+            e.preventDefault();
         },
     });
 
     return (
         <>
-        <form className="footer-form order-lg-1 order-2" data-aos="fade-right" onSubmit={formik.handleSubmit}>
+        <form className="footer-form order-lg-1 order-2" data-aos="fade-right" onSubmit={formik.handleSubmit} name="contact" method="POST" data-netlify="true">
             <div className="footer-form-field-wrapper">
-                <label htmlFor="phone" className="hidden">Телефон</label>
+                <label htmlFor="phone" className="footer-form__label">Телефон</label>
                 <input
                 id="phone"
                 name="phone"
@@ -48,7 +57,7 @@ const FooterForm = () => {
                 {formik.errors.phone ? <div className="footer-form__error">{formik.errors.phone}</div> : null}
             </div>
             <div className="footer-form-field-wrapper">
-                <label htmlFor="name" className="hidden">Имя</label>
+                <label htmlFor="name" className="footer-form__label">Имя</label>
                 <input
                 id="name"
                 name="name"
@@ -61,7 +70,7 @@ const FooterForm = () => {
                 {formik.errors.name ? <div className="footer-form__error">{formik.errors.name}</div> : null}
             </div>
             <div className="footer-form-field-wrapper">
-                <label htmlFor="message" className="hidden">Идея или вопрос</label>
+                <label htmlFor="message" className="footer-form__label">Идея или вопрос</label>
                 <textarea
                 id="message"
                 name="message"
