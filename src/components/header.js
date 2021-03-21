@@ -16,7 +16,7 @@ const Header = () => {
   useEffect(() => {
     setTimeout(() => {
       AOS.init({
-        disable: 'phone', // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+        disable: true, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
         offset: 0,
         delay: 0,
         duration: 800,
