@@ -33,12 +33,14 @@ const FooterForm = () => {
         },
         validate,
         onSubmit: values => {
+            let bodyData = JSON.stringify(values);
             fetch("/", {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: encode({ "form-name": "contact", values })
+                body: encode({ "form-name": "contact", bodyData })
               })
                 .then(() => {
+                    console.log(bodyData);
                     console.log("Success!");
                     formik.resetForm({
                         values: { phone: '', name: '', message: '' },
@@ -52,7 +54,7 @@ const FooterForm = () => {
         <>
         <form name="contact" data-netlify="true" className="footer-form order-lg-1 order-2" data-aos="fade-right" onSubmit={formik.handleSubmit}>
             <div className="footer-form-field-wrapper">
-                <label htmlFor="phone" className="footer-form__label">Телефон</label>
+                <label htmlFor="phone" className="footer-form__label">Телефон label</label>
                 <input
                 id="phone"
                 name="phone"
@@ -65,7 +67,7 @@ const FooterForm = () => {
                 {formik.errors.phone ? <div className="footer-form__error">{formik.errors.phone}</div> : null}
             </div>
             <div className="footer-form-field-wrapper">
-                <label htmlFor="name" className="footer-form__label">Имя</label>
+                <label htmlFor="name" className="footer-form__label">Имя label</label>
                 <input
                 id="name"
                 name="name"
@@ -78,7 +80,7 @@ const FooterForm = () => {
                 {formik.errors.name ? <div className="footer-form__error">{formik.errors.name}</div> : null}
             </div>
             <div className="footer-form-field-wrapper">
-                <label htmlFor="message" className="footer-form__label">Идея или вопрос</label>
+                <label htmlFor="message" className="footer-form__label">Идея или вопрос label</label>
                 <textarea
                 id="message"
                 name="message"
