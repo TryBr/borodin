@@ -156,7 +156,7 @@ const Header = () => {
                   <Link to="footer" className="header-contacts__item header-contacts__request">
                       Оставить заявку
                   </Link>
-                  <div className="header-contacts__item header-contacts__lang">
+                  {/* <div className="header-contacts__item header-contacts__lang">
                     <div className="header-contacts__value">
                           En
                     </div>
@@ -165,7 +165,7 @@ const Header = () => {
                         <path d="M1.53246 0.2661L5.00466 3.80169L8.47687 0.2661C8.55972 0.181736 8.65808 0.114815 8.76633 0.0691577C8.87458 0.0235002 8.9906 8.88921e-10 9.10777 0C9.22494 -8.88916e-10 9.34096 0.0235002 9.44921 0.0691577C9.55746 0.114815 9.65582 0.181736 9.73867 0.2661C9.82152 0.350464 9.88724 0.450618 9.93208 0.560845C9.97692 0.671072 10 0.789212 10 0.908521C10 1.02783 9.97692 1.14597 9.93208 1.2562C9.88724 1.36642 9.82152 1.46658 9.73867 1.55094L5.63109 5.73351C5.5483 5.81799 5.44996 5.88501 5.3417 5.93074C5.23345 5.97646 5.11739 6 5.00019 6C4.88299 6 4.76693 5.97646 4.65868 5.93074C4.55042 5.88501 4.45208 5.81799 4.36929 5.73351L0.261708 1.55094C0.178747 1.46664 0.11293 1.36651 0.0680226 1.25627C0.0231154 1.14604 0 1.02786 0 0.908521C0 0.789178 0.0231154 0.671007 0.0680226 0.560771C0.11293 0.450536 0.178747 0.350402 0.261708 0.2661C0.610718 -0.0801698 1.18345 -0.0892821 1.53246 0.2661Z" fill="white"/>
                       </svg>
                     </div>
-                  </div>
+                  </div> */}
                   <button className="header-contacts__menu" onClick={toggleMenu} onKeyDown={toggleMenu} role="button" tabIndex={0} aria-label="menu">
                       <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="20" cy="20" r="20" fill="url(#paint0_linear_menu)"/>

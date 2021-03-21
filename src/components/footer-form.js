@@ -40,6 +40,10 @@ const FooterForm = () => {
               })
                 .then(() => {
                     console.log("Success!");
+                    console.log(encode({ "form-name": "contact", ...values }));
+                    formik.resetForm({
+                        values: { phone: '', name: '', message: '' },
+                    });
                 })
                 .catch(error => console.log(error));
         },
