@@ -33,11 +33,10 @@ const FooterForm = () => {
         },
         validate,
         onSubmit: values => {
-            // alert(JSON.stringify(values, null, 3));
             fetch("/", {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: encode({ "form-name": "contact", values })
+                body: JSON.stringify(values, null, 3)
               })
                 .then(() => alert("Success!"))
                 .catch(error => alert(error));
