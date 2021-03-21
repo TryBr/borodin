@@ -47,7 +47,7 @@ const FooterForm = () => {
 
     return (
         <>
-        <form className="footer-form order-lg-1 order-2" data-aos="fade-right" onSubmit={formik.handleSubmit} name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+        <form name="contact" data-netlify="true" className="footer-form order-lg-1 order-2" data-aos="fade-right" onSubmit={formik.handleSubmit}>
             <div className="footer-form-field-wrapper">
                 <label htmlFor="phone" className="footer-form__label">Телефон</label>
                 <input
