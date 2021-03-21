@@ -19,6 +19,12 @@ const validate = values => {
 
 const FooterForm = () => {
 
+    function encode(data) {
+        return Object.keys(data)
+            .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+            .join("&")
+    }
+
     const formik = useFormik({
         initialValues: {
             phone: '',
@@ -35,8 +41,6 @@ const FooterForm = () => {
               })
                 .then(() => alert("Success!"))
                 .catch(error => alert(error));
-        
-            e.preventDefault();
         },
     });
 
