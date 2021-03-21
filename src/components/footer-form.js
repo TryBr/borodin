@@ -1,21 +1,7 @@
 import React from 'react';
 import { Link } from "gatsby";
-import { useFormik } from 'formik';
+import { useFormik, Formik, Form, Field, ErrorMessage } from 'formik';
 
-
-const validate = values => {
-    const errors = {};
-
-    if (!values.phone) {
-      errors.phone = 'Введите ваш телефон';
-    }
-  
-    if (!values.name) {
-      errors.name = 'Введите ваше имя';
-    }
-  
-    return errors;
-};
 
 const FooterForm = () => {
 
@@ -25,77 +11,78 @@ const FooterForm = () => {
             .join("&")
     }
 
-    const formik = useFormik({
-        initialValues: {
-            phone: '',
-            name: '',
-            message: ''
-        },
-        validate,
-        onSubmit: values => {
-            let bodyData = JSON.stringify(values);
-            fetch("/", {
-                method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: encode({ "form-name": "contact", bodyData })
-              })
-                .then(() => {
-                    console.log(bodyData);
-                    console.log("Success!");
-                    formik.resetForm({
-                        values: { phone: '', name: '', message: '' },
-                    });
-                })
-                .catch(error => console.log(error));
-        },
-    });
-
     return (
         <>
-        <form name="contact" data-netlify="true" className="footer-form order-lg-1 order-2" data-aos="fade-right" onSubmit={formik.handleSubmit}>
-            <div className="footer-form-field-wrapper">
-                <label htmlFor="phone" className="footer-form__label">Телефон label</label>
-                <input
-                id="phone"
-                name="phone"
-                type="text"
-                onChange={formik.handleChange}
-                value={formik.values.phone}
-                className="footer-form__input"
-                placeholder="Телефон *"
-                />
-                {formik.errors.phone ? <div className="footer-form__error">{formik.errors.phone}</div> : null}
-            </div>
-            <div className="footer-form-field-wrapper">
-                <label htmlFor="name" className="footer-form__label">Имя label</label>
-                <input
-                id="name"
-                name="name"
-                type="text"
-                onChange={formik.handleChange}
-                value={formik.values.name}
-                className="footer-form__input"
-                placeholder="Имя *"
-                />
-                {formik.errors.name ? <div className="footer-form__error">{formik.errors.name}</div> : null}
-            </div>
-            <div className="footer-form-field-wrapper">
-                <label htmlFor="message" className="footer-form__label">Идея или вопрос label</label>
-                <textarea
-                id="message"
-                name="message"
-                type="message"
-                onChange={formik.handleChange}
-                value={formik.values.message}
-                className="footer-form__textarea"
-                placeholder="Идея или вопрос"
-                />
-            </div>
-            <button className="footer-form-btn btn-orange-with-animation" type="submit">Связаться</button>
-            <p className="footer-form__text">
-                Нажимая на кнопку, Вы даете согласие на <Link to="#">обработку персональных данных.</Link>
-            </p>
-        </form>
+        <Formik
+            initialValues={{
+            name: '',
+            phone: '',
+            message: '',
+            }}
+            onSubmit={(values, actions) => {
+                fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: encode({ "form-name": "contact", ...values })
+                })
+                .then(() => {
+                alert('Success');
+                actions.resetForm()
+                })
+                .catch(() => {
+                alert('Error');
+                })
+                .finally(() => actions.setSubmitting(false))
+            }}
+            validate={values => {
+                const errors = {};
+                if (!values.phone) {
+                    errors.phone = 'Введите ваш телефон';
+                  }
+                
+                if (!values.name) {
+                    errors.name = 'Введите ваше имя';
+                }
+                return errors;
+              }}
+        >
+        {() => (
+            <Form name="contact" data-netlify="true" className="footer-form order-lg-1 order-2" data-aos="fade-right">
+                <div className="footer-form-field-wrapper">
+                    <label htmlFor="phone" className="footer-form__label">Телефон</label>
+                    <Field 
+                    name="phone"
+                    className="footer-form__input"
+                    placeholder="Телефон *" />
+                    <div className="footer-form__error">
+                        <ErrorMessage name="phone" />
+                    </div>
+                </div>
+                <div className="footer-form-field-wrapper">
+                    <label htmlFor="name" className="footer-form__label">Имя</label>
+                    <Field 
+                    name="name"
+                    className="footer-form__input"
+                    placeholder="Имя *" />
+                    <div className="footer-form__error">
+                        <ErrorMessage name="name" />
+                    </div>
+                </div>
+                <div className="footer-form-field-wrapper">
+                    <label htmlFor="message" className="footer-form__label">Идея или вопрос</label>
+                    <Field 
+                    name="message"
+                    className="footer-form__textarea"
+                    placeholder="Идея или вопрос"
+                    component="textarea"/>
+                </div>
+                <button className="footer-form-btn btn-orange-with-animation" type="submit">Связаться</button>
+                <p className="footer-form__text">
+                    Нажимая на кнопку, Вы даете согласие на <Link to="#">обработку персональных данных.</Link>
+                </p>
+            </Form>
+        )}
+        </Formik>
         </>
     );
 };
