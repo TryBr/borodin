@@ -38,7 +38,7 @@ const Projects = () => {
                         <h2 className="portfolio-title title-h2">Портфолио</h2>
                     </div>
                 </div>
-                <div className="row" data-aos="fade-up">
+                <div className="row row-eq-height" data-aos="fade-up">
                     {
                         allContentfulPortfolio.nodes.map((node) => (
                             <Project key={node.id} content={node} />

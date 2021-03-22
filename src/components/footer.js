@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import FooterContacts from "../components/footer-contacts";
 import FooterForm from "../components/footer-form";

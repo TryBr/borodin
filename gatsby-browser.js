@@ -32,6 +32,7 @@ import "./src/styles/reviews.sass";
 import "./src/styles/clients.sass";
 import "./src/styles/footer.sass";
 import "./src/styles/menu-mobile.sass";
+import "./src/styles/popup.sass";
 
 // swiper
 import 'swiper/swiper-bundle.min.css';

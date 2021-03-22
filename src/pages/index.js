@@ -11,7 +11,6 @@ import Reviews from "../components/reviews";
 import Clients from "../components/clients";
 import Footer from "../components/footer";
 
-
 // import SEO from "../components/seo"
 
 const IndexPage = () => {
