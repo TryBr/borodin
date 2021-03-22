@@ -167,18 +167,18 @@ const Header = () => {
                     </div>
                   </div> */}
                   <button className="header-contacts__menu" onClick={toggleMenu} onKeyDown={toggleMenu} role="button" tabIndex={0} aria-label="menu">
-                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="20" cy="20" r="20" fill="url(#paint0_linear_menu)"/>
-                      <rect x="12" y="15" width="16" height="1.28" rx="0.639999" fill="white"/>
-                      <rect x="12" y="19.5903" width="16" height="1.28" rx="0.639999" fill="white"/>
-                      <rect x="17.3334" y="24.1807" width="10.6666" height="1.28" rx="0.639999" fill="white"/>
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="25" cy="25" r="25" fill="url(#paint0_linear__menu__btn)"/>
+                      <rect x="12" y="17" width="24.9999" height="1.67751" rx="0.838757" fill="white"/>
+                      <rect x="12" y="24.1612" width="24.9999" height="1.67751" rx="0.838757" fill="white"/>
+                      <rect x="20.3334" y="31.3225" width="16.6666" height="1.67751" rx="0.838757" fill="white"/>
                       <defs>
-                      <linearGradient id="paint0_linear_menu" x1="0" y1="0" x2="42.7901" y2="3.89986" gradientUnits="userSpaceOnUse">
-                      <stop stopColor="#FE9417"/>
-                      <stop offset="1" stopColor="#F56233"/>
+                      <linearGradient id="paint0_linear__menu__btn" x1="0" y1="0" x2="53.4877" y2="4.87483" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FE9417"/>
+                      <stop offset="1" stop-color="#F56233"/>
                       </linearGradient>
                       </defs>
-                      </svg>
+                    </svg>
                   </button>
               </div>
             </div>
