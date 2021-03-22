@@ -18,6 +18,7 @@
     "gatsby-plugin-gatsby-cloud": "^2.0.0",
     "gatsby-plugin-image": "^1.0.0",
     "gatsby-plugin-manifest": "^3.1.0",
+    "gatsby-plugin-netlify": "^3.1.0",
     "gatsby-plugin-offline": "^4.1.0",
     "gatsby-plugin-preact": "^5.1.0",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",

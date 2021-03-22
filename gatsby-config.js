@@ -47,6 +47,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sass`
     },
-    `gatsby-plugin-preact`
+    `gatsby-plugin-preact`,
+    `gatsby-plugin-netlify`
   ],
 }
