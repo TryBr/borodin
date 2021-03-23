@@ -24,8 +24,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Веб-дизайн и разработка для бизнеса | Дмитрий Бородин`,
+        short_name: `Веб-дизайн и разработка для бизнеса`,
         start_url: `/`,
         background_color: `#223463`,
         theme_color: `#223463`,

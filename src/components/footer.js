@@ -40,7 +40,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="footer-copyright">
-                © 2021 Дмитрий Бородин
+                © {(new Date().getFullYear())} Дмитрий Бородин
             </div>
         </footer>
     );

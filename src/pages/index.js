@@ -2,6 +2,7 @@ import * as React from "react";
 import { Helmet } from "react-helmet";
 
 import Layout from "../components/layout";
+import Header from "../components/header";
 import Services from "../components/services";
 import Qualities from "../components/qualities";
 import Projects from "../components/projects";
@@ -24,6 +25,7 @@ const IndexPage = () => {
         <meta name="description" content="Веб-дизайн и разработка для бизнеса"></meta>
         <title>Веб-дизайн и разработка для бизнеса | Дмитрий Бородин</title>
       </Helmet>
+      <Header />
       <Services />
       <Qualities />
       <Projects />
