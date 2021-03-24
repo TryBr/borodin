@@ -220,7 +220,7 @@ const FooterForm = () => {
                 const errors = {};
                 if (!values.phone) {
                     errors.phone = 'Введите ваш телефон';
-                  }
+                }
                 
                 if (!values.name) {
                     errors.name = 'Введите ваше имя';
@@ -242,7 +242,7 @@ const FooterForm = () => {
                     <label htmlFor="phone" className="footer-form__label">Телефон</label>
                     <Field 
                     name="phone"
-                    className="footer-form__input"
+                    className="footer-form__input has-error"
                     placeholder="Телефон *" />
                     <div className="footer-form__error">
                         <ErrorMessage name="phone" />
