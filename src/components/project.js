@@ -21,7 +21,7 @@ const Project = (
         <div className="portfolio-item">
             <div className="portfolio-item-preview">
                 {
-                    url ? <img src={url} alt={title} /> : ''
+                    url ? <img className="portfolio-item-preview__img" src={url} alt={title} /> : ''
                 }
             </div>
             <div className="portfolio-info">

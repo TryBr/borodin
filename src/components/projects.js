@@ -8,7 +8,7 @@ const Projects = () => {
         graphql`
             query {
               allContentfulPortfolio(
-                sort: {fields: contentful_id, order: DESC}
+                sort: {fields: createdAt, order: ASC}
                 filter: {node_locale: {eq: "ru-RU"}}
               ) {
                 nodes {
