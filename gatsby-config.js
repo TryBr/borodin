@@ -67,5 +67,19 @@ module.exports = {
         useCDN: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-breadcrumb`,
+      options: {
+        // defaultCrumb: optional To create a default crumb
+        // see Click Tracking default crumb example below
+        defaultCrumb: {
+          location: {
+            pathname: "/",
+          },
+          crumbLabel: "Главная",
+          crumbSeparator: "/",
+        }
+      }
+    }
   ],
 }

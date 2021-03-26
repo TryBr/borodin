@@ -33,7 +33,9 @@ import "./src/styles/clients.sass";
 import "./src/styles/footer.sass";
 import "./src/styles/menu-mobile.sass";
 import "./src/styles/popup.sass";
+import "./src/styles/page.sass";
 import "./src/styles/404.sass";
+import "./src/styles/breadcrumbs.sass";
 
 // swiper
 import 'swiper/swiper-bundle.min.css';

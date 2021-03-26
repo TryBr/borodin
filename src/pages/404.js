@@ -9,11 +9,19 @@ import Projects from "../components/projects";
 import Reviews from "../components/reviews";
 import Clients from "../components/clients";
 import Footer from "../components/footer";
+import { Breadcrumb } from 'gatsby-plugin-breadcrumb';
 
-const NotFoundPage = () => (
+const NotFoundPage = ({ location }) => (
   <Layout>
     <SEO title="404: Not found" />
     <HeaderInner />
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-12">
+          <Breadcrumb location={location} crumbLabel="404" />
+        </div>
+      </div>
+    </div>
     <div className="page-404">
       <h1 className="page-404__title">
         404. Упс, здесь ничего нет...
