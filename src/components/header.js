@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { slide as Menu, stack } from 'react-burger-menu';
+import { elastic, slide as Menu } from 'react-burger-menu';
 import { Link } from "react-scroll";
 import { useStaticQuery, graphql } from "gatsby";
 import HtmlParser from 'html-react-parser';
@@ -10,6 +10,7 @@ import HeaderSocial from "../components/header-social";
 import MenuContacts from "../components/menu-contacts";
 import MenuSocial from "../components/menu-social";
 import HeaderFigure from "../images/header-figure.svg";
+import HeaderIllustration from "../images/header-illustration.svg";
 
 const Header = () => {
   const [menuState, setMenuState] = useState(false);
@@ -42,11 +43,6 @@ const Header = () => {
                 title {
                   title
                 }
-                illustration {
-                  file {
-                    url
-                  }
-                }
               }
             }
           }
@@ -55,7 +51,6 @@ const Header = () => {
 
   const title = allContentfulHeader.nodes[0].title.title,
         description = allContentfulHeader.nodes[0].description.description,
-        illustration = allContentfulHeader.nodes[0].illustration.file.url,
         btnOne = allContentfulHeader.nodes[0].btnOne,
         btnTwo = allContentfulHeader.nodes[0].btnTwo;
 
@@ -76,7 +71,7 @@ const Header = () => {
 
   return (
     <>
-    <Menu className="menu-mobile" isOpen={menuState} onClose={closeMenu} Animation={stack} right={true} aria-hidden="true">
+    <Menu className="menu-mobile" isOpen={menuState} onClose={closeMenu} Animation={elastic} right={true} elastic={true} aria-hidden="true">
       <div className="menu-close-btn" onClick={closeMenu} onKeyDown={closeMenu} role="button" tabIndex={0}>
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M7.40864 5.9983L11.7045 1.71244C11.8926 1.52432 11.9983 1.26917 11.9983 1.00312C11.9983 0.737078 11.8926 0.48193 11.7045 0.293808C11.5164 0.105686 11.2612 0 10.9952 0C10.7291 0 10.474 0.105686 10.2859 0.293808L6 4.58966L1.71414 0.293808C1.52602 0.105686 1.27087 -1.98219e-09 1.00483 0C0.738783 1.98219e-09 0.483635 0.105686 0.295513 0.293808C0.107391 0.48193 0.00170495 0.737078 0.00170495 1.00312C0.00170495 1.26917 0.107391 1.52432 0.295513 1.71244L4.59136 5.9983L0.295513 10.2842C0.201875 10.377 0.127553 10.4875 0.0768329 10.6093C0.0261132 10.731 0 10.8616 0 10.9935C0 11.1254 0.0261132 11.2559 0.0768329 11.3777C0.127553 11.4994 0.201875 11.6099 0.295513 11.7028C0.388386 11.7964 0.49888 11.8707 0.620622 11.9215C0.742363 11.9722 0.872943 11.9983 1.00483 11.9983C1.13671 11.9983 1.26729 11.9722 1.38903 11.9215C1.51077 11.8707 1.62127 11.7964 1.71414 11.7028L6 7.40693L10.2859 11.7028C10.3787 11.7964 10.4892 11.8707 10.611 11.9215C10.7327 11.9722 10.8633 11.9983 10.9952 11.9983C11.1271 11.9983 11.2576 11.9722 11.3794 11.9215C11.5011 11.8707 11.6116 11.7964 11.7045 11.7028C11.7981 11.6099 11.8724 11.4994 11.9232 11.3777C11.9739 11.2559 12 11.1254 12 10.9935C12 10.8616 11.9739 10.731 11.9232 10.6093C11.8724 10.4875 11.7981 10.377 11.7045 10.2842L7.40864 5.9983Z" fill="#FE9417"/>
@@ -223,7 +218,7 @@ const Header = () => {
               <img src={HeaderFigure} alt=""/>
             </div>
             <div className="header-human" data-aos="fade-up" data-aos-delay="300">
-              <img fadeIn="false" loading="eager" src={illustration} alt=""/>
+              <img fadeIn="false" loading="eager" src={HeaderIllustration} alt=""/>
             </div>
             <div className="header-social" data-aos="fade-left">
               <HeaderSocial />

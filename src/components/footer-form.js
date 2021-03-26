@@ -268,7 +268,7 @@ const FooterForm = () => {
                 </div>
                 <button className="footer-form-btn btn-orange-with-animation" type="submit">Связаться</button>
                 <p className="footer-form__text">
-                    Нажимая на кнопку, Вы даете согласие на <Link to="#">обработку персональных данных.</Link>
+                    Нажимая на кнопку, Вы даете согласие на <Link to="/policy">обработку персональных данных.</Link>
                 </p>
             </Form>
         )}
