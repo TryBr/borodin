@@ -24,9 +24,9 @@ const HeaderSocial = () => {
 
   return (
     <>
-    <a href={telegram} target="_blank" rel="noreferrer" className="header-social__item header-social__item_tg" aria-label="tg"></a>
-    <a href={whatsapp} target="_blank" rel="noreferrer" className="header-social__item header-social__item_wa" aria-label="wa"></a>
-    <a href={vk} target="_blank" rel="noreferrer" className="header-social__item header-social__item_vk" aria-label="vk"></a>
+    <a href={telegram} target="_blank" rel="noreferrer" className="header-social__item header-social__item_tg" aria-label="tg"> </a>
+    <a href={whatsapp} target="_blank" rel="noreferrer" className="header-social__item header-social__item_wa" aria-label="wa"> </a>
+    <a href={vk} target="_blank" rel="noreferrer" className="header-social__item header-social__item_vk" aria-label="vk"> </a>
     </>
   );
 };

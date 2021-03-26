@@ -1,17 +1,14 @@
 import * as React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import HeaderInner from "../components/header-inner";
 import Projects from "../components/projects";
 import Reviews from "../components/reviews";
 import Clients from "../components/clients";
-import Footer from "../components/footer";
 import { Breadcrumb } from 'gatsby-plugin-breadcrumb';
 
 const Policy = ({ location }) => (
   <Layout>
     <SEO title="Политика конфиденциальности" />
-    <HeaderInner />
     <div className="container">
       <div className="row">
         <div className="col-lg-12">
@@ -307,7 +304,6 @@ const Policy = ({ location }) => (
     <Projects />
     <Reviews />
     <Clients />
-    <Footer />
   </Layout>
 )
 

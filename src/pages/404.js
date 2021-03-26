@@ -3,18 +3,14 @@ import { Link } from "gatsby";
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import illustration from "../images/404.svg";
-
-import HeaderInner from "../components/header-inner";
 import Projects from "../components/projects";
 import Reviews from "../components/reviews";
 import Clients from "../components/clients";
-import Footer from "../components/footer";
 import { Breadcrumb } from 'gatsby-plugin-breadcrumb';
 
 const NotFoundPage = ({ location }) => (
   <Layout>
     <SEO title="404: Not found" />
-    <HeaderInner />
     <div className="container">
       <div className="row">
         <div className="col-lg-12">
@@ -38,7 +34,6 @@ const NotFoundPage = ({ location }) => (
     <Projects />
     <Reviews />
     <Clients />
-    <Footer />
   </Layout>
 )
 
