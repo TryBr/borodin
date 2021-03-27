@@ -30,7 +30,7 @@ const Review = (
             </div>
             <div className="author-info">
                 <div className="author-fio">{fio}</div>
-                <div className="author-post">{post}</div>
+                <a href={post} target="_blank" className="author-post">{post}</a>
             </div>
         </div>
     </div>
