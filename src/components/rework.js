@@ -2,8 +2,6 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby";
 import { Link } from "react-scroll";
 import HtmlParser from 'html-react-parser';
-import Illustration from "../images/rework-illustration.svg";
-
 
 const Rework = () => {
 
@@ -14,6 +12,11 @@ const Rework = () => {
                 filter: {node_locale: {eq: "ru-RU"}}
               ) {
                 nodes {
+                    illustration {
+                      file {
+                        url
+                      }
+                    }
                     stars {
                         file {
                           url
@@ -45,6 +48,7 @@ const Rework = () => {
     )
 
     const title = allContentfulRework.nodes[0].title.title,
+          illustration = allContentfulRework.nodes[0].illustration.file.url,
           stars = allContentfulRework.nodes[0].stars.file.url,
           starsMobile = allContentfulRework.nodes[0].starsMobile.file.url,
           planets = allContentfulRework.nodes[0].planets.file.url,
@@ -75,7 +79,7 @@ const Rework = () => {
                         <div className="row">
                             <div className="col-lg-6 order-lg-1 order-2">
                                 <div className="rework-info__rocket" data-aos="fade-right">
-                                    <img width="265" height="375" src={Illustration} alt="Вашему сайту нужны доработки?"/>
+                                    <img width="265" height="375" src={illustration} alt="Вашему сайту нужны доработки?"/>
                                 </div>
                             </div>
                             <div className="col-lg-6 order-lg-2 order-1">

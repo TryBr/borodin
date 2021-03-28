@@ -4,7 +4,6 @@ import FooterForm from "../components/footer-form";
 import FooterIllustration from "../images/footer-illustration.svg";
 
 const Footer = () => {
-
     return(
         <footer className="footer section">
             <img width="100%" height="100%"  src={FooterIllustration} className="footer-illustration" data-aos="fade-left" alt=""/>
