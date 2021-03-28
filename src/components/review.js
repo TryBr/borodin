@@ -30,7 +30,7 @@ const Review = (
             </div>
             <div className="author-info">
                 <div className="author-fio">{fio}</div>
-                <a href={post} target="_blank" className="author-post">{post}</a>
+                <a href={post} rel="noreferrer" target="_blank" className="author-post">{post}</a>
             </div>
         </div>
     </div>
