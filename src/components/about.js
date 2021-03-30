@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import HtmlParser from 'html-react-parser';
-import aboutPhoto from "../images/photo.jpg";
+import aboutPhoto from "../images/photo.webp";
 import Advantages from "../components/advantages";
 import AboutIllustration from "../images/about-illustration.svg";
 

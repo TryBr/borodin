@@ -23,6 +23,7 @@ import "@fontsource/montserrat/700.css";
 
 // styles
 import "./src/styles/header.sass";
+import "./src/styles/header-sticky.sass";
 import "./src/styles/services.sass";
 import "./src/styles/quality.sass";
 import "./src/styles/portfolio.sass";
