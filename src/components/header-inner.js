@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { elastic, slide as Menu } from 'react-burger-menu';
-import { Link } from "gatsby";
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import { Link as GatsyLink } from "gatsby";
 import HeaderContacts from "./header-contacts";
 import MenuContacts from "../components/menu-contacts";
 import MenuSocial from "../components/menu-social";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const Header = () => {
-
-  const [menuState, setMenuState] = useState(false);
+const HeaderInner = ({ menuState, toggleMenu, scrollTo }) => {
 
   useEffect(() => {
     setTimeout(() => {
@@ -24,33 +23,19 @@ const Header = () => {
     }, 50);
   });
 
-  function toggleMenu() {
-    setMenuState(menuState === false ? true : false);
-  }
-
-  function closeMenu() {
-    setMenuState(false);
-  }
-
-  function scrollTo() {
-    setTimeout(() => {
-      setMenuState(false);
-    }, 100);
-  }
-
   return (
     <>
-    <Menu className="menu-mobile" isOpen={menuState} onClose={closeMenu} Animation={elastic} right={true} elastic={true} customBurgerIcon={false} customCrossIcon={false} aria-hidden="true">
-      <div className="menu-close-btn" onClick={closeMenu} onKeyDown={closeMenu} role="button" tabIndex={0}> </div>
+    <Menu className="menu-mobile" isOpen={menuState} onClose={toggleMenu} Animation={elastic} right={true} elastic={true} customBurgerIcon={false} customCrossIcon={false} aria-hidden="true">
+      <div className="menu-close-btn" onClick={toggleMenu} onKeyDown={toggleMenu} role="button" tabIndex={0}> </div>
       <ul className="menu">
         <li className="menu__item active">
-          <Link to="/" className="menu__item-link" onClick={scrollTo} onKeyDown={scrollTo}>Возможности и цены</Link>
+          <GatsyLink to="/" className="menu__item-link" onClick={scrollTo} onKeyDown={scrollTo}>Возможности и цены</GatsyLink>
         </li>
         <li className="menu__item">
           <Link to="portfolio" className="menu__item-link" onClick={scrollTo} onKeyDown={scrollTo}>Портфолио</Link>
         </li>
         <li className="menu__item">
-          <Link to="/" className="menu__item-link" onClick={scrollTo} onKeyDown={scrollTo}>Обо мне</Link>
+          <GatsyLink to="/" className="menu__item-link" onClick={scrollTo} onKeyDown={scrollTo}>Обо мне</GatsyLink>
         </li>
         <li className="menu__item">
           <Link to="reviews" className="menu__item-link" onClick={scrollTo} onKeyDown={scrollTo}>Отзывы</Link>
@@ -93,4 +78,4 @@ const Header = () => {
   );
 };
 
-export default Header
+export default HeaderInner

@@ -9,7 +9,6 @@ import About from "../components/about";
 import Rework from "../components/rework";
 import Reviews from "../components/reviews";
 import Clients from "../components/clients";
-import HeaderSticky from "../components/header-sticky";
 
 // import SEO from "../components/seo"
 
@@ -24,7 +23,6 @@ const IndexPage = () => {
         <meta name="description" content="Веб-дизайн и разработка для бизнеса"></meta>
         <title>Веб-дизайн и разработка для бизнеса | Дмитрий Бородин</title>
       </Helmet>
-      {/* <HeaderSticky /> */}
       <Services />
       <Qualities />
       <Projects />

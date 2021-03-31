@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { elastic, slide as Menu } from 'react-burger-menu';
-import { Link } from "react-scroll";
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 import { useStaticQuery, graphql } from "gatsby";
 import HtmlParser from 'html-react-parser';
 import AOS from 'aos';
@@ -12,9 +12,7 @@ import MenuSocial from "../components/menu-social";
 import HeaderFigure from "../images/header-figure.svg";
 import HeaderIllustration from "../images/header-illustration.svg";
 
-const Header = () => {
-  const [menuState, setMenuState] = useState(false);
-
+const Header = ({ menuState, toggleMenu, scrollTo }) => {
   useEffect(() => {
     setTimeout(() => {
       AOS.init({
@@ -54,26 +52,11 @@ const Header = () => {
         btnOne = allContentfulHeader.nodes[0].btnOne,
         btnTwo = allContentfulHeader.nodes[0].btnTwo;
 
-
-  function toggleMenu() {
-    setMenuState(menuState === false ? true : false);
-  }
-
-  function closeMenu() {
-    setMenuState(false);
-  }
-
-  function scrollTo() {
-    setTimeout(() => {
-      setMenuState(false);
-    }, 100);
-  }
-
   return (
     <>
     <header className="header">
-      <Menu className="menu-mobile" isOpen={menuState} onClose={closeMenu} Animation={elastic} right={true} elastic={true} customBurgerIcon={false} customCrossIcon={false} aria-hidden="true">
-        <div className="menu-close-btn" onClick={closeMenu} onKeyDown={closeMenu} role="button" tabIndex={0}> </div>
+      <Menu className="menu-mobile" isOpen={menuState} onClose={toggleMenu} Animation={elastic} right={true} elastic={true} customBurgerIcon={false} customCrossIcon={false} aria-hidden="true">
+        <div className="menu-close-btn" onClick={toggleMenu} onKeyDown={toggleMenu} role="button" tabIndex={0}> </div>
         <ul className="menu">
           <li className="menu__item active">
             <Link to="services" className="menu__item-link" onClick={scrollTo} onKeyDown={scrollTo}>Возможности и цены</Link>
@@ -127,14 +110,14 @@ const Header = () => {
             </div>
             <div className="header-buttons" data-aos="fade-right" data-aos-offset="-100">
               <div className="header-buttons__about btn-orange">
-                <Link to="about" className="header-buttons__content">
+                <Link to="about" duration={1500} smooth={true} isDynamic={true} className="header-buttons__content">
                   <div className="header-buttons__title">
                     {btnOne}
                   </div>
                   <div className="header-buttons__icon header-buttons__icon_about"></div>
                 </Link>
               </div>
-              <Link to="portfolio" className="header-buttons__portfolio">
+              <Link to="portfolio" duration={1500} smooth={true} isDynamic={true} className="header-buttons__portfolio">
                 <div className="header-buttons__content">
                   <div className="header-buttons__title">
                     {btnTwo}

@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from "react-scroll";
+import React, { useEffect } from 'react';
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 import 'aos/dist/aos.css';
 import HeaderContactsSticky from "../components/header-contacts-sticky";
 
 
-const HeaderSticky = () => {
-  const [menuState, setMenuState] = useState(false);
+const HeaderSticky = ({ menuState, toggleMenu, scrollTo }) => {
   useEffect(() => {
     const header = document.getElementById("stickyHeader");
     const headerHeight = document.querySelector("header").offsetHeight;
@@ -27,20 +26,6 @@ const HeaderSticky = () => {
       window.removeEventListener("scroll", scrollCallBack);
     };
   }, []);
-
-  function toggleMenu() {
-    setMenuState(menuState === false ? true : false);
-  }
-
-  function closeMenu() {
-    setMenuState(false);
-  }
-
-  function scrollTo() {
-    setTimeout(() => {
-      setMenuState(false);
-    }, 100);
-  }
 
 
   return (

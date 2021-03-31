@@ -6,7 +6,6 @@
     padding-bottom: 150px
     margin-bottom: 150px
     &.header-inner
-        height: 120px
         background: linear-gradient(106.54deg, #2F2B31 0%, #412664 67.19%, #223463 100%)
         padding: 0px
         margin-bottom: 45px
@@ -300,8 +299,16 @@
         margin-bottom: 100px
         .header-top-panel
             .header-top-panel__logo
-                width: 155px
-                margin-top: 15px
+                .logo__link
+                    background-size: contain
+                    background-repeat: no-repeat
+                    width: 190px
+            .header-menu-btn
+                display: block
+        .header-contacts
+            display: none
+        .header-social
+            display: none
         .header-info
             margin-top: 100px
             .header-info__title
@@ -323,7 +330,10 @@
         padding-bottom: 80px
         .header-top-panel
             .header-top-panel__logo
-                width: 155px
+                .logo__link
+                    background-size: contain
+                    background-repeat: no-repeat
+                    width: 190px
             .header-menu-btn
                 display: block
         .header-contacts
@@ -362,9 +372,19 @@
     .header
         margin-bottom: 80px
         padding-bottom: 80px
+        &.header-inner
+            .header-top-panel
+                .header-top-panel__logo
+                    .logo__link
+                        background-size: contain
+                        background-repeat: no-repeat
+                        width: 190px
         .header-top-panel
             .header-top-panel__logo
-                width: 155px
+                .logo__link
+                    background-size: contain
+                    background-repeat: no-repeat
+                    width: 190px
             .header-menu-btn
                 display: block
         .header-contacts
