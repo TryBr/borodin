@@ -110,14 +110,14 @@ const Header = ({ menuState, toggleMenu, scrollTo }) => {
             </div>
             <div className="header-buttons" data-aos="fade-right" data-aos-offset="-100">
               <div className="header-buttons__about btn-orange">
-                <Link to="about" duration={2500} className="header-buttons__content">
+                <Link to="about" duration={1500} className="header-buttons__content">
                   <div className="header-buttons__title">
                     {btnOne}
                   </div>
                   <div className="header-buttons__icon header-buttons__icon_about"></div>
                 </Link>
               </div>
-              <Link to="portfolio" duration={1500} className="header-buttons__portfolio">
+              <Link to="portfolio" duration={800} className="header-buttons__portfolio">
                 <div className="header-buttons__content">
                   <div className="header-buttons__title">
                     {btnTwo}
