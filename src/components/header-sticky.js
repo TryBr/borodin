@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import { Link } from 'react-scroll';
 import 'aos/dist/aos.css';
 import HeaderContactsSticky from "../components/header-contacts-sticky";
 

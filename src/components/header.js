@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { elastic, slide as Menu } from 'react-burger-menu';
-import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import { Link } from 'react-scroll';
 import { useStaticQuery, graphql } from "gatsby";
 import HtmlParser from 'html-react-parser';
 import AOS from 'aos';
@@ -59,16 +59,16 @@ const Header = ({ menuState, toggleMenu, scrollTo }) => {
         <div className="menu-close-btn" onClick={toggleMenu} onKeyDown={toggleMenu} role="button" tabIndex={0}> </div>
         <ul className="menu">
           <li className="menu__item active">
-            <Link to="services" className="menu__item-link" onClick={scrollTo} onKeyDown={scrollTo}>Возможности и цены</Link>
+            <Link to="services" className="menu__item-link" onClick={scrollTo} onKeyDown={scrollTo} duration={800}>Возможности и цены</Link>
           </li>
           <li className="menu__item">
-            <Link to="portfolio" className="menu__item-link" onClick={scrollTo} onKeyDown={scrollTo}>Портфолио</Link>
+            <Link to="portfolio" className="menu__item-link" onClick={scrollTo} onKeyDown={scrollTo} duration={800}>Портфолио</Link>
           </li>
           <li className="menu__item">
-            <Link to="about" className="menu__item-link" onClick={scrollTo} onKeyDown={scrollTo}>Обо мне</Link>
+            <Link to="about" className="menu__item-link" onClick={scrollTo} onKeyDown={scrollTo} duration={1500}>Обо мне</Link>
           </li>
           <li className="menu__item">
-            <Link to="reviews" className="menu__item-link" onClick={scrollTo} onKeyDown={scrollTo}>Отзывы</Link>
+            <Link to="reviews" className="menu__item-link" onClick={scrollTo} onKeyDown={scrollTo} duration={2000}>Отзывы</Link>
           </li>
         </ul>
         <div className="menu-social">
@@ -110,14 +110,14 @@ const Header = ({ menuState, toggleMenu, scrollTo }) => {
             </div>
             <div className="header-buttons" data-aos="fade-right" data-aos-offset="-100">
               <div className="header-buttons__about btn-orange">
-                <Link to="about" duration={1500} smooth={true} isDynamic={true} className="header-buttons__content">
+                <Link to="about" duration={2500} className="header-buttons__content">
                   <div className="header-buttons__title">
                     {btnOne}
                   </div>
                   <div className="header-buttons__icon header-buttons__icon_about"></div>
                 </Link>
               </div>
-              <Link to="portfolio" duration={1500} smooth={true} isDynamic={true} className="header-buttons__portfolio">
+              <Link to="portfolio" duration={1500} className="header-buttons__portfolio">
                 <div className="header-buttons__content">
                   <div className="header-buttons__title">
                     {btnTwo}

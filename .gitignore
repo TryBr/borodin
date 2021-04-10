@@ -66,4 +66,5 @@ yarn-error.log
 .yarn-integrity
 
 # history
+.history/
 .history/*

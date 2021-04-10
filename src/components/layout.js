@@ -36,7 +36,7 @@ const Layout = ({ children, location }) => {
         : 
         <>
         <HeaderInner menuState={menuState} toggleMenu={toggleMenu} scrollTo={scrollTo} />
-        <HeaderSticky menuState={menuState} toggleMenu={toggleMenu} scrollTo={scrollTo} />
+        {/* <HeaderSticky menuState={menuState} toggleMenu={toggleMenu} scrollTo={scrollTo} /> */}
         </>
       } 
       <main>{children}</main>
