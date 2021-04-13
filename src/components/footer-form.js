@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "gatsby";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Modal } from 'react-bootstrap';
+import InputMask from "react-input-mask";
 import SuccessIcon from "../images/popup-success-icon.svg";
 import ErrorIcon from "../images/popup-error-icon.svg";
 
@@ -21,7 +22,6 @@ const FooterForm = () => {
             .join("&")
     }
 
-    
 
     return (
         <>
@@ -106,10 +106,20 @@ const FooterForm = () => {
                 </div>
                 <div className="footer-form-field-wrapper">
                     <label htmlFor="phone" className="footer-form__label">Телефон</label>
-                    <Field 
+                    {/* <Field 
+                    type="tel"
                     name="phone"
                     className="footer-form__input has-error"
-                    placeholder="Телефон *" />
+                    placeholder="Телефон *" 
+                    /> */}
+
+                    <InputMask mask="+7 (999) 999-99-99" 
+                    type="tel"
+                    name="phone"
+                    className="footer-form__input has-error"
+                    placeholder="Телефон *"
+                    />
+
                     <div className="footer-form__error">
                         <ErrorMessage name="phone" />
                     </div>
