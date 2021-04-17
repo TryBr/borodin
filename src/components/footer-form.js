@@ -2,18 +2,20 @@ import React, { useState } from "react";
 import { Link } from "gatsby";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Modal } from 'react-bootstrap';
+import HtmlParser from 'html-react-parser';
 import SuccessIcon from "../images/popup-success-icon.svg";
 import ErrorIcon from "../images/popup-error-icon.svg";
 
 const FooterForm = () => {
 
-    const [showSuccess, setShowSuccess] = useState(false);
-    const handleCloseSuccess = () => setShowSuccess(false);
-    const handleShowSuccess = () => setShowSuccess(true);
+    const [statusModal, setStatusModal] = useState(false);
+    const handleCloseModal = () => setStatusModal(false);
+    const handleShowModal = () => setStatusModal(true);
 
-    const [showError, setShowError] = useState(false);
-    const handleCloseError = () => setShowError(false);
-    const handleShowError = () => setShowError(true);
+    const [modalTitle, setModalTitle] = useState('');
+    const [modalText, setModalText] = useState('');
+    const [modalBtn, setModalBtn] = useState('');
+    const [modalStatus, setModalStatus] = useState('');
 
     function encode(data) {
         return Object.keys(data)
@@ -23,38 +25,6 @@ const FooterForm = () => {
 
     return (
         <>
-        <Modal className="popup popup-success" show={showSuccess} onHide={handleCloseSuccess}>
-            <div className="popup-close" onClick={handleCloseSuccess} onKeyDown={handleCloseSuccess} role="button" tabIndex={0} aria-label="closeBtn"></div>
-            <div className="popup-icon">
-                <img src={SuccessIcon} alt="Успех"/>
-            </div>
-            <h4 className="popup-title title-h3">
-            Ваша заявка отправлена
-            </h4>
-            <p className="popup-text">
-            Cпасибо за ваше обращение. <br />
-            Скоро я с вами свяжусь.
-            </p>
-            <div className="popup-btn btn-orange" onClick={handleCloseSuccess} onKeyDown={handleCloseSuccess} role="button" tabIndex={0} aria-label="okBtn">
-            Хорошо
-            </div>
-        </Modal>
-        <Modal className="popup popup-error" show={showError} onHide={handleCloseError}>
-            <div className="popup-close" onClick={handleCloseError} onKeyDown={handleCloseError} role="button" tabIndex={0} aria-label="closeBtn"></div>
-            <div className="popup-icon">
-                <img src={ErrorIcon} alt="Ошибка"/> 
-            </div>
-            <h4 className="popup-title title-h3">
-                Упс, что-то пошло не так...
-            </h4>
-            <p className="popup-text">
-                Ваше письмо не удалось отправить. <br />
-                Попробуйте еще раз.
-            </p>
-            <div className="popup-btn btn-orange" onClick={handleCloseError} onKeyDown={handleCloseError} role="button" tabIndex={0} aria-label="okBtn">
-                Сейчас попробую
-            </div>
-        </Modal>
         <Formik
             initialValues={{
             name: '',
@@ -68,16 +38,25 @@ const FooterForm = () => {
                 body: encode({ "form-name": "contact", ...values })
                 })
                 .then(() => {
-                    console.log('Success');
-                    actions.resetForm();
+                    console.log('then');
                 })
                 .catch(() => {
                     console.log('Error');
-                    handleShowError();
+                    setModalTitle('Упс, что-то пошло не так...');
+                    setModalText(`Ваше письмо не удалось отправить. <br />Попробуйте еще раз.`);
+                    setModalBtn('Сейчас попробую');
+                    setModalStatus(false);
+                    handleShowModal();
                 })
                 .finally(() => {
-                    handleShowSuccess();
+                    console.log('Success');
+                    setModalTitle('Ваша заявка отправлена');
+                    setModalText(`Cпасибо за ваше обращение. <br />Скоро я с вами свяжусь.`);
+                    setModalBtn('Хорошо');
+                    setModalStatus(true);
+                    handleShowModal();
                     actions.setSubmitting(false);
+                    actions.resetForm();
                 })
             }}
             validate={values => {
@@ -140,6 +119,21 @@ const FooterForm = () => {
             </Form>
         )}
         </Formik>
+        <Modal className="popup popup-success" show={statusModal} onHide={handleCloseModal}>
+            <div className="popup-close" onClick={handleCloseModal} onKeyDown={handleCloseModal} role="button" tabIndex={0} aria-label="closeBtn"></div>
+            <div className={`popup-icon ${modalStatus}`}>
+                <img src={modalStatus ? SuccessIcon : ErrorIcon} alt={modalStatus} />
+            </div>
+            <h4 className="popup-title title-h3">
+                {modalTitle}
+            </h4>
+            <p className="popup-text">
+                {HtmlParser(modalText)}
+            </p>
+            <div className="popup-btn btn-orange" onClick={handleCloseModal} onKeyDown={handleCloseModal} role="button" tabIndex={0} aria-label="okBtn">
+                {modalBtn}
+            </div>
+        </Modal>
         </>
     );
 };

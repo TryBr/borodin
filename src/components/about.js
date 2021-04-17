@@ -37,7 +37,7 @@ const About = () => {
                 <div className="row">
                     <div className="col-lg-12">
                     <div className="about-illustration">
-                        <img src={AboutIllustration} alt="Обо мне"/>
+                        <img width="428" height="439" src={AboutIllustration} alt="Обо мне"/>
                     </div>
                         <div className="about-content">
                             <div className="container">

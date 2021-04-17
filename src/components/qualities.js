@@ -32,7 +32,7 @@ const Qualities = () => {
   return(
     <section className="quality section" id="quality">
       <div className="quality-figure">
-        <img src={QualityFigure} alt="Хотите качественно и надежно?"/>
+        <img width="1900" height="1848" src={QualityFigure} alt="Хотите качественно и надежно?"/>
       </div>
       <div className="quality-content section-content">
         <div className="quality-title">
@@ -43,7 +43,7 @@ const Qualities = () => {
           <div className="row">
             <div className="col-lg-6">
               <div className="quality-illustration" data-aos="fade-right">
-                <img src={QualityIllustration} alt="Гарантирую вам прозрачность и уверенность в результате"/>
+                <img width="733" height="915" src={QualityIllustration} alt="Гарантирую вам прозрачность и уверенность в результате"/>
               </div>
             </div>
             <div className="col-lg-6">
