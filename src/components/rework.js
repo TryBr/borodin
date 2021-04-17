@@ -61,10 +61,10 @@ const Rework = () => {
                 <img src={ starsMobile } alt=""/>
             </div>
             <div className="rework-stars">
-                <img src={ stars } alt=""/>
+                <img width="1445" height="823" src={ stars } alt=""/>
             </div>
             <div className="rework-planets">
-                <img src={ planets } alt=""/>
+                <img width="1482" height="779" src={ planets } alt=""/>
             </div>
             <div className="rework-planets-mobile">
                 <img src={ planetsMobile } alt=""/>

@@ -127,7 +127,7 @@ const Header = ({ menuState, toggleMenu, scrollTo }) => {
               </Link>
             </div>
             <div className="header-figure">
-              <img src={HeaderFigure} alt=""/>
+              <img width="1041" height="1036" src={HeaderFigure} alt=""/>
             </div>
             <div className="header-human" data-aos="fade-up" data-aos-delay="300">
               <img width="900" height="900" fadeIn="false" loading="eager" src={HeaderIllustration} alt=""/>

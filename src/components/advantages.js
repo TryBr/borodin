@@ -7,11 +7,12 @@ const Advantages = () => {
         graphql`
             query {
                 allContentfulAdvantages(
-                sort: {fields: contentful_id, order: ASC}
+                sort: {fields: sort, order: ASC}
                 filter: {node_locale: {eq: "ru-RU"}}
               ) {
                 nodes {
-                  id
+                  id,
+                  sort
                   title {
                     title
                   }
