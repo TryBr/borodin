@@ -2,6 +2,11 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby";
 import { Link } from "react-scroll";
 import HtmlParser from 'html-react-parser';
+import ReworkRocket from "../images/rework-illustration.svg";
+import ReworkStars from "../images/stars.svg";
+import ReworkStarsMobile from "../images/stars-m.svg";
+import ReworkPlanets from "../images/planets.svg";
+import ReworkPlanetsMobile from "../images/planets-m.svg";
 
 const Rework = () => {
 
@@ -12,31 +17,6 @@ const Rework = () => {
                 filter: {node_locale: {eq: "ru-RU"}}
               ) {
                 nodes {
-                    illustration {
-                      file {
-                        url
-                      }
-                    }
-                    stars {
-                        file {
-                          url
-                        }
-                    }
-                    starsMobile {
-                        file {
-                          url
-                        }
-                    }
-                    planets {
-                        file {
-                          url
-                        }
-                    }
-                    planetsMobile {
-                        file {
-                          url
-                        }
-                    }
                     list,
                     title {
                         title
@@ -48,26 +28,21 @@ const Rework = () => {
     )
 
     const title = allContentfulRework.nodes[0].title.title,
-          illustration = allContentfulRework.nodes[0].illustration.file.url,
-          stars = allContentfulRework.nodes[0].stars.file.url,
-          starsMobile = allContentfulRework.nodes[0].starsMobile.file.url,
-          planets = allContentfulRework.nodes[0].planets.file.url,
-          planetsMobile = allContentfulRework.nodes[0].planetsMobile.file.url,
           list = allContentfulRework.nodes[0].list;
 
     return(
         <section className="rework section" id="rework">
             <div className="rework-stars-mobile">
-                <img src={ starsMobile } alt=""/>
+                <img src={ ReworkStarsMobile } alt=""/>
             </div>
             <div className="rework-stars">
-                <img width="1445" height="823" src={ stars } alt=""/>
+                <img width="1445" height="823" src={ ReworkStars } alt=""/>
             </div>
             <div className="rework-planets">
-                <img width="1482" height="779" src={ planets } alt=""/>
+                <img width="1482" height="779" src={ ReworkPlanets } alt=""/>
             </div>
             <div className="rework-planets-mobile">
-                <img src={ planetsMobile } alt=""/>
+                <img src={ ReworkPlanetsMobile } alt=""/>
             </div>
             <div className="rework-content section-content">
                 <div className="rework-title">
@@ -79,7 +54,7 @@ const Rework = () => {
                         <div className="row">
                             <div className="col-lg-6 order-lg-1 order-2">
                                 <div className="rework-info__rocket" data-aos="fade-right">
-                                    <img width="265" height="375" src={illustration} alt="Вашему сайту нужны доработки?"/>
+                                    <img width="265" height="375" src={ReworkRocket} alt="Вашему сайту нужны доработки?"/>
                                 </div>
                             </div>
                             <div className="col-lg-6 order-lg-2 order-1">
