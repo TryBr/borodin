@@ -32,9 +32,14 @@ const Project = (
                 <div className="portfolio-info__description">
                     { description }
                 </div>
-                <a href={link} target="_blank" rel="noreferrer" className="portfolio-info__link">
-                    Посмотреть
-                </a>
+                <div className="portfolio-info-btn btn-orange">
+                    <a href={link} target="_blank" rel="noreferrer" className="portfolio-info-btn__link">
+                        <div className="portfolio-info-btn__title">
+                        Посмотреть
+                        </div>
+                        <div className="portfolio-info-btn__icon"></div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
