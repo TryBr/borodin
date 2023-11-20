@@ -14,14 +14,12 @@ const Project = ({
     <div className="col-lg-6">
       <div className="portfolio-item">
         <div className="portfolio-item-preview">
-          {url ? (
+          {url && (
             <img
               className="portfolio-item-preview__img"
               src={url}
               alt={title}
             />
-          ) : (
-            ""
           )}
         </div>
         <div className="portfolio-info">
@@ -29,19 +27,23 @@ const Project = ({
           <div className="portfolio-info__separator"></div>
           <div className="portfolio-info__description">{description}</div>
 
-          {link && (
-            <div className="portfolio-info-btn btn-orange">
-              <a
-                href={link}
-                target="_blank"
-                rel="noreferrer"
-                className="portfolio-info-btn__link"
-              >
-                <div className="portfolio-info-btn__title">Посмотреть</div>
-                <div className="portfolio-info-btn__icon"></div>
-              </a>
-            </div>
-          )}
+          <div
+            className={
+              link
+                ? "portfolio-info-btn btn-orange"
+                : "portfolio-info-btn btn-orange hidden"
+            }
+          >
+            <a
+              href={link}
+              target="_blank"
+              rel="noreferrer"
+              className="portfolio-info-btn__link"
+            >
+              <div className="portfolio-info-btn__title">Посмотреть</div>
+              <div className="portfolio-info-btn__icon"></div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
